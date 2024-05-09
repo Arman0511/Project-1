@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Sign Up</title>
+<style>
+ body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #003366, #ffffff); /* Marine Blue and White combination */
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 500px; /* Widened the form */
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with some transparency */
+    padding: 30px; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Increased box shadow */
+    font-weight: bold; /* Added font weight */
+    color: #ffffff; /* Set text color to white */
+}
+
+h2, h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 22px; /* Increased font size */
+    color: #6A5ACD; /* Lavender */
+    margin-bottom: 30px; /* Increased margin bottom */
+}
+
+label {
+    font-weight: bold;
+    color: #ffffff; /* Set label text color to white */
+}
+
+input[type=text], input[type=email], input[type=password], input[type=tel], select {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    margin: 8px 0; /* Increased margin */
+    border: 2px solid #ccc; /* Increased border thickness */
+    border-radius: 6px; /* Increased border radius */
+    box-sizing: border-box;
+    color: #000000; /* Set input text color to black */
+}
+
+input[type=submit], .button {
+    background-color: #6A5ACD; /* Lavender */
+    color: #ffffff;
+    padding: 12px 24px; /* Increased padding */
+    margin-top: 20px; /* Increased margin top */
+    border: none;
+    border-radius: 6px; /* Increased border radius */
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none; /* Added for the button */
+    display: inline-block; /* Added for the button */
+}
+
+input[type=submit]:hover, .button:hover {
+    background-color: #483D8B; /* DarkSlateBlue */
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 100px; /* Increased margin bottom */
+}
+
+.logo img {
+    max-width: 190px; /* Adjusted logo size to 90px */
+    height: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="EJ.JPG" alt="EJ">
+</div>
+
+<form method="post" action="signup.php" onsubmit="return validateForm()">
+  <h2>Hello our dear customers, to enjoy and experience vivid and luxurious experience in EJ DCRUZ Real Estate</h2>
+  <h3>Please Sign up</h3>
+  
+  <label for="last_name">Last Name:</label>
+  <input type="text" id="last_name" name="last_name" required>
+  
+  <label for="first_name">First Name:</label>
+  <input type="text" id="first_name" name="first_name" required>
+  
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  
+  <label for="contact_number">Contact Number:</label>
+  <input type="tel" id="contact_number" name="contact_number" required>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  
+  <label for="confirm_password">Confirm Password:</label>
+  <input type="password" id="confirm_password" name="confirm_password" required>
+  
+  <label for="position">Position:</label>
+  <select id="position" name="position" required>
+    <option value="" disabled selected>Select your position</option>
+    <option value="buyer">Buyer</option>
+    <option value="seller">Seller</option>
+    <option value="agent">Agent</option>
+  </select>
+  
+  <input type="submit" value="Sign Up">
+</form>
+
+<!-- "Already have an account" and "Login" buttons -->
+<div style="text-align: center;">
+    <a href="homepage.php" class="button">Already have an account? Go to homepage</a>
+    <a href="login.html" class="button">Login</a>
+</div>
+
+<script>
+function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>
